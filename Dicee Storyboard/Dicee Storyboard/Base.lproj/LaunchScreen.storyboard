@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="Wg2-Kj-hhf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="Wg2-Kj-hhf">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dicee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gal-UR-dxk">
                                 <rect key="frame" x="104.33333333333333" y="418.66666666666669" width="221.33333333333337" height="95.000000000000057"/>
@@ -30,8 +29,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gal-UR-dxk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="39u-fj-rHv"/>
-                            <constraint firstItem="gal-UR-dxk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Hn9-Mh-FVH"/>
+                            <constraint firstItem="Wg2-Kj-hhf" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="BDI-wr-KdZ"/>
+                            <constraint firstAttribute="bottom" secondItem="Wg2-Kj-hhf" secondAttribute="bottom" id="MOC-GV-ZD7"/>
+                            <constraint firstItem="gal-UR-dxk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PU0-Wd-Jl4"/>
+                            <constraint firstItem="gal-UR-dxk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="QOp-Yn-fDw"/>
+                            <constraint firstItem="Wg2-Kj-hhf" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Qoq-5u-3Xu"/>
+                            <constraint firstItem="Wg2-Kj-hhf" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="Qvr-M8-Af9"/>
                         </constraints>
                     </view>
                 </viewController>

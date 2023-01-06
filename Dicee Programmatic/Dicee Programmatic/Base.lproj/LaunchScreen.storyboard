@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="6pY-VH-SW9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen" translatesAutoresizingMaskIntoConstraints="NO" id="6pY-VH-SW9">
                                 <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dicee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3Z-r0-iWX">
                                 <rect key="frame" x="104.33333333333333" y="418.66666666666669" width="221.33333333333337" height="95.000000000000057"/>
@@ -30,8 +29,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="H3Z-r0-iWX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="WsV-sK-zmD"/>
-                            <constraint firstItem="H3Z-r0-iWX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="czB-MX-ofy"/>
+                            <constraint firstAttribute="bottom" secondItem="6pY-VH-SW9" secondAttribute="bottom" id="7X2-ZT-Ih5"/>
+                            <constraint firstItem="6pY-VH-SW9" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="BC0-tm-ZT7"/>
+                            <constraint firstItem="H3Z-r0-iWX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="d6X-Wi-3Ql"/>
+                            <constraint firstItem="6pY-VH-SW9" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="gTE-9Y-bl4"/>
+                            <constraint firstItem="H3Z-r0-iWX" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="nzg-c3-pTb"/>
+                            <constraint firstItem="6pY-VH-SW9" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ssE-lR-91t"/>
                         </constraints>
                     </view>
                 </viewController>
