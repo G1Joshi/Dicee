@@ -88,17 +88,75 @@ class ViewController: UIViewController {
         return label
     }()
 
+    let mainStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.alignment = .fill
+        stack.distribution = .fillEqually
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    let diceStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 75
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    let player1StackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    let player2StackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    let scoreStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 150
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+
+    let logoView: UIView = UIView()
+    let diceView: UIView = UIView()
+    let buttonView: UIView = UIView()
+    let scoreView: UIView = UIView()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(background)
-        view.addSubview(diceLogo)
-        view.addSubview(diceImage1)
-        view.addSubview(diceImage2)
-        view.addSubview(rollButton)
-        view.addSubview(player1)
-        view.addSubview(player2)
-        view.addSubview(score1)
-        view.addSubview(score2)
+        view.addSubview(mainStackView)
+
+        mainStackView.addArrangedSubview(logoView)
+        mainStackView.addArrangedSubview(diceView)
+        mainStackView.addArrangedSubview(buttonView)
+        mainStackView.addArrangedSubview(scoreView)
+
+        logoView.addSubview(diceLogo)
+
+        diceView.addSubview(diceStackView)
+        diceStackView.addArrangedSubview(diceImage1)
+        diceStackView.addArrangedSubview(diceImage2)
+
+        buttonView.addSubview(rollButton)
+
+        scoreView.addSubview(scoreStackView)
+        scoreStackView.addArrangedSubview(player1StackView)
+        scoreStackView.addArrangedSubview(player2StackView)
+        player1StackView.addArrangedSubview(player1)
+        player1StackView.addArrangedSubview(score1)
+        player2StackView.addArrangedSubview(player2)
+        player2StackView.addArrangedSubview(score2)
 
         NSLayoutConstraint.activate([
             background.topAnchor.constraint(equalTo: view.topAnchor),
@@ -106,31 +164,24 @@ class ViewController: UIViewController {
             background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             background.trailingAnchor.constraint(equalTo: view.trailingAnchor),
 
-            diceLogo.topAnchor.constraint(equalTo: background.topAnchor, constant: 150),
-            diceLogo.centerXAnchor.constraint(equalTo: background.centerXAnchor),
+            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            mainStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
 
-            diceImage1.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 50),
-            diceImage1.centerYAnchor.constraint(equalTo: background.centerYAnchor),
+            diceLogo.centerXAnchor.constraint(equalTo: logoView.centerXAnchor),
+            diceLogo.centerYAnchor.constraint(equalTo: logoView.centerYAnchor),
 
-            diceImage2.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -50),
-            diceImage2.centerYAnchor.constraint(equalTo: background.centerYAnchor),
+            diceStackView.centerXAnchor.constraint(equalTo: diceView.centerXAnchor),
+            diceStackView.centerYAnchor.constraint(equalTo: diceView.centerYAnchor),
 
-            rollButton.centerXAnchor.constraint(equalTo: background.centerXAnchor),
-            rollButton.topAnchor.constraint(equalTo: diceLogo.bottomAnchor, constant: 300),
+            rollButton.centerXAnchor.constraint(equalTo: buttonView.centerXAnchor),
+            rollButton.centerYAnchor.constraint(equalTo: buttonView.centerYAnchor),
             rollButton.widthAnchor.constraint(equalToConstant: 150),
             rollButton.heightAnchor.constraint(equalToConstant: 75),
 
-            player1.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 50),
-            player1.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: -150),
-
-            player2.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -50),
-            player2.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: -150),
-
-            score1.topAnchor.constraint(equalTo: player1.bottomAnchor, constant: 5),
-            score1.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 50),
-
-            score2.topAnchor.constraint(equalTo: player2.bottomAnchor, constant: 5),
-            score2.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -50),
+            scoreStackView.centerXAnchor.constraint(equalTo: scoreView.centerXAnchor),
+            scoreStackView.centerYAnchor.constraint(equalTo: scoreView.centerYAnchor),
         ])
     }
 
